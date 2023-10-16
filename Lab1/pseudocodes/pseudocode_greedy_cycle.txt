@@ -1,0 +1,26 @@
+greedy_cycle(distance_table, num_runs):
+    best_solution = None
+    min_distance = ∞
+    max_distance = 0
+    total_distance = 0
+    
+    for i in range(num_runs):
+        start_node = RandomlySelectStartNode()
+        cycle = [start_node]
+        distance = 0
+        for j in range(num_nodes // 2 - 1):
+            nearest_node = FindNearestUnvisitedNode(cycle, distance_table)
+            cycle.append(nearest_node)
+            distance += DistanceBetweenNodes(cycle[-2], nearest_node, distance_table)
+        distance += DistanceBetweenNodes(cycle[-1], start_node, distance_table)
+        cycle = OptimizeCycle(cycle, distance_table)
+        distance = CalculateTotalDistance(cycle, distance_table)
+        total_distance += distance
+        if distance < min_distance:
+            min_distance = distance
+            best_solution = cycle
+        if distance > max_distance:
+            max_distance = distance
+    
+    average_distance = total_distance / num_runs
+    return best_solution, min_distance, max_distance, average_distance

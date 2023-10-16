@@ -1,0 +1,4 @@
+Nearest Neighbor:
+Minimum Distance: 56304.0
+Maximum Distance: 63304.0
+Average Distance: 58759.42

@@ -1,0 +1,4 @@
+Greedy Cycle:
+Minimum Distance: 47627.0
+Maximum Distance: 55908.0
+Average Distance: 50821.855

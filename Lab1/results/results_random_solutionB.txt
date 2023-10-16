@@ -1,0 +1,4 @@
+Random Solution:
+Minimum Distance: 234571.0
+Maximum Distance: 290927.0
+Average Distance: 265443.755

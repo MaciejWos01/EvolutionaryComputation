@@ -1,0 +1,19 @@
+random_solution(distance_table, num_runs):
+    best_solution = None
+    min_distance = ∞
+    max_distance = 0
+    total_distance = 0
+    
+    for i in range(num_runs):
+        nodes = GenerateRandomNodes(distance_table)
+        cycle = FormHamiltonianCycle(nodes)
+        distance = CalculateTotalDistance(cycle, distance_table)
+        total_distance += distance
+        if distance < min_distance:
+            min_distance = distance
+            best_solution = cycle
+        if distance > max_distance:
+            max_distance = distance
+
+    average_distance = total_distance / num_runs
+    return best_solution, min_distance, max_distance, average_distance
